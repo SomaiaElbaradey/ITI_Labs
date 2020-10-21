@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1603195661 source:d:\iti\iti_labs\lab3\avgofarraycolumns\main.c
+	<stdio.h>
+	<stdlib.h>
+

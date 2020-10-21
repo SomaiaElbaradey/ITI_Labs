@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1603200719 source:d:\iti\iti_labs\lab3\arraymultipation\main.c
+	<stdio.h>
+	<stdlib.h>
+

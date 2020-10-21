@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1603192653 source:d:\iti\iti_labs\lab3\minnumber\main.c
+	<stdio.h>
+	<stdlib.h>
+

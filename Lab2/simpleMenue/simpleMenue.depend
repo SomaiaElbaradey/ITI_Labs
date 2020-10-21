@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1603113108 source:d:\iti\iti_labs\lab2\simplemenue\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
