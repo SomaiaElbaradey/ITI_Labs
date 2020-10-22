@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1603372981 source:d:\iti\iti_labs\lab5\employeedata\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
