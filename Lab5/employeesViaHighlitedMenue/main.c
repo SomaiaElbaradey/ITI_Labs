@@ -32,10 +32,11 @@ typedef struct Emp
 }Employee;
 int main()
 {
+    int num;
     int empIndex;
     Employee emp1[10];
     int flag=1;
-    char menue[3][10] = {"New","Display by id","Display All","Delete by id","Delete All","Exit"};
+    char menue[6][20] = {"New","Display by id","Display All","Delete by id","Delete All","Exit"};
     int cursor =0;
     char ch;
     do
@@ -66,12 +67,12 @@ int main()
             case up:
                 cursor--;
                 if(cursor<0){
-                    cursor=2;
+                    cursor=5;
                 }
                 break;
             case down:
                 cursor++;
-                if(cursor>2){
+                if(cursor>5){
                     cursor=0;
                 }
                 break;
@@ -79,7 +80,7 @@ int main()
                 cursor=0;
                 break;
             case end:
-                cursor=2;
+                cursor=5;
                 break;
             }
             break;
@@ -89,51 +90,127 @@ int main()
             {
             case 0:
                 system("cls");
-                printf("please enter your employee id \n");
+                printf("please enter your employee index \n");
                 _flushall();
                 scanf("%i",&empIndex);
-                printf("press any key to enter your %i employee data",empIndex);
-                getch();
-                system("cls");
-                //view the fields to get
-                gotoxy(10,2);
-                printf("id: ");
-                gotoxy(50,2);
-                printf("name: ");
-                gotoxy(10,7);
-                printf("age: ");
-                gotoxy(50,7);
-                printf("salary: ");
-                gotoxy(10,12);
-                printf("com: ");
-                gotoxy(50,12);
-                printf("deduct: ");
-                //get the data from user
-                gotoxy(14,2);
-                scanf("%i",&emp1[empIndex].id);
-                _flushall();
-                gotoxy(57,2);
-                scanf("%s",emp1[empIndex].name);
-                _flushall();
-                gotoxy(14,7);
-                scanf("%d",&emp1[empIndex].age);
-                _flushall();
-                gotoxy(57,7);
-                scanf("%f",&emp1[empIndex].salary);
-                _flushall();
-                gotoxy(14,12);
-                scanf("%f",&emp1[empIndex].commission);
-                _flushall();
-                gotoxy(57,12);
-                scanf("%f",&emp1[empIndex].deduction);
-                _flushall();
+                if (empIndex>10||empIndex<1){
+                    printf("your employee index doesn't exist \n");
+                    getch();
+                } else {
+                    printf("press any key to enter your %i employee data",empIndex);
+                    getch();
+                    system("cls");
+                    num = empIndex-1;
+                    //view the fields to get
+                    gotoxy(10,2);
+                    printf("id: ");
+                    gotoxy(50,2);
+                    printf("name: ");
+                    gotoxy(10,7);
+                    printf("age: ");
+                    gotoxy(50,7);
+                    printf("salary: ");
+                    gotoxy(10,12);
+                    printf("com: ");
+                    gotoxy(50,12);
+                    printf("deduct: ");
+                    //get the data from user
+                    gotoxy(14,2);
+                    scanf("%d",&emp1[num].id);
+                    _flushall();
+                    gotoxy(57,2);
+                    scanf("%s",emp1[num].name);
+                    _flushall();
+                    gotoxy(14,7);
+                    scanf("%d",&emp1[num].age);
+                    _flushall();
+                    gotoxy(57,7);
+                    scanf("%f",&emp1[num].salary);
+                    _flushall();
+                    gotoxy(14,12);
+                    scanf("%f",&emp1[num].commission);
+                    _flushall();
+                    gotoxy(57,12);
+                    scanf("%f",&emp1[num].deduction);
+                    _flushall();
+                }
                 break;
             case 1:
                 system("cls");
-                printf("Display Page");
+                printf("please enter your employee index you wanna show \n");
+                _flushall();
+                scanf("%i",&empIndex);
+                printf("press any key to show your %i employee data",empIndex);
                 getch();
+                _flushall();
+                system("cls");
+                num = empIndex-1;
+                if (empIndex){                                                                   //how to say if it's not a rubbish?
+                    //view employee data
+                    textattr(5);
+                    printf("your number %i employee data:\n", empIndex);
+                    textattr(3);
+                    printf("the employ name is: %s\n", emp1[num].name);
+                    printf("who's id is: %d,\n", emp1[num].id);
+                    printf("age is: %d,\n", emp1[num].age);
+                    printf("salary is: %f,\n", emp1[num].salary);
+                    printf("commission is: %f,\n", emp1[num].commission);
+                    printf("deduction is: %f,\n", emp1[num].deduction);
+                    printf("and Net Salary is: %f.\n", emp1[num].commission+emp1[num].deduction);
+                    getchar();
+                } else{
+                    printf("there's no data for your %i employee",empIndex);
+                    getchar();
+                }
                 break;
             case 2:
+                system("cls");
+                for (int i=0; i<10; i++){
+                    if (emp1[i].id){                                                                   //how to say if it's not a rubbish?
+                        //view employee data
+                        textattr(5);
+                        printf("your number %i employee data:\n", i+1);
+                        textattr(3);
+                        printf("the employ name is: %s\n", emp1[i].name);
+                        printf("who's id is: %d,\n", emp1[i].id);
+                        printf("age is: %d,\n", emp1[i].age);
+                        printf("salary is: %f,\n", emp1[i].salary);
+                        printf("commission is: %f,\n", emp1[i].commission);
+                        printf("deduction is: %f,\n", emp1[i].deduction);
+                        printf("and Net Salary is: %f.\n\n", emp1[i].commission+emp1[i].deduction);
+                    }
+                }
+                getchar();
+                break;
+            case 3:
+                system("cls");
+                printf("please enter your employee index you wanna delete \n");
+                _flushall();
+                scanf("%i",&empIndex);
+                printf("press any key to delete your number %i employee data",empIndex);
+                getch();
+                _flushall();
+                system("cls");
+                if (empIndex>10||empIndex<1){
+                    printf("your employee index doesn't exist \n");
+                }
+                for (int i=0; i<10; i++){
+                    if (i+1 ==empIndex){
+                        //delete this employee
+                        //emp1[i].name='  ';
+                        emp1[i].age=0;
+                        emp1[i].salary=0;
+                        emp1[i].commission=0;
+                        emp1[i].deduction=0;
+                    printf("your employee data was deleted successfuly! \n");
+                    }
+                }
+                getchar();
+                break;
+            case 4:
+                //dalete all!
+                break;
+            case 5:
                 flag=0;
                 break;
             }
@@ -143,7 +220,7 @@ int main()
             break;
         case tab:
             cursor++;
-            if(cursor>2){
+            if(cursor>5){
                 cursor=0;
             }
             break;
