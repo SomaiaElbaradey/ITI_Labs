@@ -12,7 +12,6 @@
 void textattr(int i)
 {
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), i);
-
 }
 void gotoxy( int column, int line )
 {
@@ -29,7 +28,7 @@ typedef struct Emp
     float salary;
     float commission;
     float deduction;
-}Employee;
+} Employee;
 int main()
 {
     int num;
@@ -39,9 +38,13 @@ int main()
     char menue[6][20] = {"New","Display by id","Display All","Delete by id","Delete All","Exit"};
     int cursor =0;
     char ch;
+    for(int i=0; i<10; i++){
+        emp1[i].id=NULL;
+    }
     do
     {
         system("cls");
+
         for(int i=0; i<6; i++)
         {
             if (i==cursor)
@@ -66,13 +69,15 @@ int main()
             {
             case up:
                 cursor--;
-                if(cursor<0){
+                if(cursor<0)
+                {
                     cursor=5;
                 }
                 break;
             case down:
                 cursor++;
-                if(cursor>5){
+                if(cursor>5)
+                {
                     cursor=0;
                 }
                 break;
@@ -93,10 +98,13 @@ int main()
                 printf("please enter your employee index \n");
                 _flushall();
                 scanf("%i",&empIndex);
-                if (empIndex>10||empIndex<1){
+                if (empIndex>10||empIndex<1)
+                {
                     printf("your employee index doesn't exist \n");
                     getch();
-                } else {
+                }
+                else
+                {
                     printf("press any key to enter your %i employee data",empIndex);
                     getch();
                     system("cls");
@@ -145,7 +153,8 @@ int main()
                 _flushall();
                 system("cls");
                 num = empIndex-1;
-                if (empIndex){                                                                   //how to say if it's not a rubbish?
+                if (emp1[num].id!=NULL)
+                {
                     //view employee data
                     textattr(5);
                     printf("your number %i employee data:\n", empIndex);
@@ -158,15 +167,20 @@ int main()
                     printf("deduction is: %f,\n", emp1[num].deduction);
                     printf("and Net Salary is: %f.\n", emp1[num].commission+emp1[num].deduction);
                     getchar();
-                } else{
+                }
+                else
+                {
                     printf("there's no data for your %i employee",empIndex);
                     getchar();
                 }
                 break;
             case 2:
+                //display all
                 system("cls");
-                for (int i=0; i<10; i++){
-                    if (emp1[i].id){                                                                   //how to say if it's not a rubbish?
+                for (int i=0; i<10; i++)
+                {
+                    if (emp1[num].id!=NULL)
+                    {
                         //view employee data
                         textattr(5);
                         printf("your number %i employee data:\n", i+1);
@@ -183,32 +197,38 @@ int main()
                 getchar();
                 break;
             case 3:
+                //delete by id
                 system("cls");
                 printf("please enter your employee index you wanna delete \n");
-                _flushall();
                 scanf("%i",&empIndex);
                 printf("press any key to delete your number %i employee data",empIndex);
                 getch();
                 _flushall();
                 system("cls");
-                if (empIndex>10||empIndex<1){
+                num= empIndex-1;
+                if (empIndex>10||empIndex<1)
+                {
                     printf("your employee index doesn't exist \n");
                 }
-                for (int i=0; i<10; i++){
-                    if (i+1 ==empIndex){
-                        //delete this employee
-                        //emp1[i].name='  ';
-                        emp1[i].age=0;
-                        emp1[i].salary=0;
-                        emp1[i].commission=0;
-                        emp1[i].deduction=0;
-                    printf("your employee data was deleted successfuly! \n");
+                for (int i=0; i<10; i++)
+                {
+                    if (i==num)
+                    {
+                        //delete this employee data
+                        emp1[i].id=0;
+                        printf("your employee data was deleted successfuly! \n");
                     }
                 }
                 getchar();
                 break;
             case 4:
+                system("cls");
                 //dalete all!
+                for(int i=0; i<10; i++){
+                    emp1[i].id=NULL;
+                }
+                printf("All the data was deleted successfully!");
+                getchar();
                 break;
             case 5:
                 flag=0;
@@ -220,11 +240,13 @@ int main()
             break;
         case tab:
             cursor++;
-            if(cursor>5){
+            if(cursor>5)
+            {
                 cursor=0;
             }
             break;
         }
-    } while(flag==1);
+    }
+    while(flag==1);
     return 0;
 }
