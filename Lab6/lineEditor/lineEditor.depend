@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1603626442 source:d:\iti\iti_labs\lab6\lineeditor\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+

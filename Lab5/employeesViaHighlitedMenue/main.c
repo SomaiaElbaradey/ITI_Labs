@@ -35,11 +35,11 @@ int main()
     int empIndex;
     Employee emp1[10];
     int flag=1;
-    char menue[6][20] = {"New","Display by id","Display All","Delete by id","Delete All","Exit"};
+    char menue[6][20] = {"New","Display by index","Display All","Delete by index","Delete All","Exit"};
     int cursor =0;
     char ch;
     for(int i=0; i<10; i++){
-        emp1[i].id=NULL;
+        emp1[i].id = NULL;
     }
     do
     {
@@ -144,6 +144,7 @@ int main()
                 }
                 break;
             case 1:
+                //display by index
                 system("cls");
                 printf("please enter your employee index you wanna show \n");
                 _flushall();
@@ -177,9 +178,9 @@ int main()
             case 2:
                 //display all
                 system("cls");
-                for (int i=0; i<10; i++)
+                 for (int i=0; i<10; i++)
                 {
-                    if (emp1[num].id!=NULL)
+                    if (emp1[i].id!=NULL)
                     {
                         //view employee data
                         textattr(5);
@@ -192,12 +193,14 @@ int main()
                         printf("commission is: %f,\n", emp1[i].commission);
                         printf("deduction is: %f,\n", emp1[i].deduction);
                         printf("and Net Salary is: %f.\n\n", emp1[i].commission+emp1[i].deduction);
+                    } else {
+                        printf("there's no data for employee number %d \n", i+1);
                     }
                 }
                 getchar();
                 break;
             case 3:
-                //delete by id
+                //delete by index
                 system("cls");
                 printf("please enter your employee index you wanna delete \n");
                 scanf("%i",&empIndex);
@@ -215,7 +218,7 @@ int main()
                     if (i==num)
                     {
                         //delete this employee data
-                        emp1[i].id=0;
+                        emp1[i].id=NULL;
                         printf("your employee data was deleted successfuly! \n");
                     }
                 }
@@ -228,7 +231,7 @@ int main()
                     emp1[i].id=NULL;
                 }
                 printf("All the data was deleted successfully!");
-                getchar();
+                getch();
                 break;
             case 5:
                 flag=0;
