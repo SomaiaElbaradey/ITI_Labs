@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1603710448 source:d:\iti\iti_labs\lab7\factorial\main.c
+	<stdio.h>
+	<stdlib.h>
+

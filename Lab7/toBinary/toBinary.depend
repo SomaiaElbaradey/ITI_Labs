@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1603714022 source:d:\iti\iti_labs\lab7\tobinary\main.c
+	<stdio.h>
+	<stdlib.h>
+

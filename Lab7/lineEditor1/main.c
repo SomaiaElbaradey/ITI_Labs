@@ -27,25 +27,26 @@ void swap(char* a, char* b)
     *a = *b;
     *b = tmp;
 }
-int main()
-{
+int * Line(int size,int xPos, int yPos, int startC, int endC ){
+    system("cls");
     int flag =1;
-    char line[31];
+    char *line;
+    line= malloc(size*sizeof(char));
     char *pfirst, *plast, *pcurrent;
     char ch;
     int currentpos, lastpos, firstpos;
-    currentpos=firstpos=lastpos=10;
+    currentpos=firstpos=lastpos=yPos;
     pfirst=plast=pcurrent=line;
-    for (int i=0; i<31; i++)
+    for (int i=0; i<size; i++)
     {
-        gotoxy(10+i, 10);
+        gotoxy(yPos+i, xPos);
         textattr(23);
         _cprintf(" ");
     }
 
     do
     {
-        gotoxy(currentpos,10);
+        gotoxy(currentpos,xPos);
         ch=getch();
         switch(ch)
         {
@@ -83,7 +84,7 @@ int main()
                     pcurrent++;
                     currentpos++;
                     *pcurrent=*(pcurrent+1);
-                    gotoxy(currentpos,10);
+                    gotoxy(currentpos,xPos);
                     printf("%c",*pcurrent);
                     //shifting
                     for(int i=0; i<(lastpos-currentpos)+1; i++)
@@ -104,8 +105,7 @@ int main()
         case esc:
         case enter:
             flag=0;
-            system("cls");
-            printf("%s",line);
+            plast='\0';
             break;
         case backSpace:
             if(currentpos>firstpos)
@@ -116,7 +116,7 @@ int main()
                     pcurrent--;
                     lastpos--;
                     plast--;
-                    gotoxy(currentpos,10);
+                    gotoxy(currentpos,xPos);
                     printf("%c",' ');
                     *pcurrent=' ';
                 }
@@ -126,7 +126,7 @@ int main()
                     currentpos--;
                     pcurrent--;
                     *pcurrent=*(pcurrent+1);
-                    gotoxy(currentpos,10);
+                    gotoxy(currentpos,xPos);
                     printf("%c",*pcurrent);
                     int num = lastpos-currentpos;
                     //printf("%d",num);
@@ -146,10 +146,9 @@ int main()
             }
             break;
         default:
-            _flushall();
-            if(isprint(ch))
+            if(isprint(ch) && ch>startC && ch< endC)
             {
-                if(currentpos<firstpos+30)
+                if(currentpos<firstpos+size)
                 {
                     if(currentpos==lastpos)
                     {
@@ -173,5 +172,25 @@ int main()
         }
     }
     while(flag==1);
+    return line;
+}
+int main()
+{
+    int size, xPos, yPos, startC, endC;
+    printf("please enter the line size: \n");
+    scanf("%d",&size);
+    printf("please enter the x-position for the cursor start: \n");
+    scanf("%d",&xPos);
+    printf("please enter the y-position for the cursor start: \n");
+    scanf("%d",&yPos);
+    printf("enter the start of ascii: \n");
+    scanf("%d",&startC);
+    printf("enter the end of ascii: \n");
+    scanf("%d",&endC);
+
+    char *x=Line(size, xPos, yPos, startC, endC);
+    system("cls");
+    printf("%s",x);
+
     return 0;
 }
