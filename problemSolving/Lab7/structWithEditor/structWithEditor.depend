@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1603986221 source:d:\iti\iti_labs\lab7\structwitheditor\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+

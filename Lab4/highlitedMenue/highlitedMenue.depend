@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1603287566 source:d:\iti\iti_labs\lab4\highlitedmenue\main.c
-	<stdio.h>
-	<stdlib.h>
-	<windows.h>
-

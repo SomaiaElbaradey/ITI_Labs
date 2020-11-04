@@ -1,0 +1,46 @@
+/*
+the difference between em and rem units:    
+they're both responsive units that help to allow sizes to be based on the font-size.
+suppose we are working with child and the "parent" font-size is 6px ..
+em: for font-size prop will be relative to the parent element -> for 10 em the font-size will be 10*6=160px 
+    for any other element will be relative to the font-size of the current element -> suppose the child has font-size=15px
+    then the prop of padding for example will be: for 10em= 10*15=150px
+rem: is always relative to the font-size of the "root" element. this means it always ignores the values of any parent and look
+    to the root "which is the <html> tag" it is 16px by default. so if we put any properity= 10rem it will be 10*16=160px.
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/* select p elements and make them red */
+p{
+    color:red;
+}
+/* select p and div elements */
+div, p{
+    color:blue;
+}
+ /*select p with class mainClass direct child for div with id myDiv and make it styled  */
+div#myDiv > p.mainClass{
+    color:pink;
+}
+/* select all p inside div and style them */
+div p{
+    color: blueviolet;
+}
+/* select input with type text element with class myClass */
+input.myClass[type="text"] {
+    color: cadetblue;
+}
+/* select span elementssss after div  */
+div ~ span{
+    color: slategray;
+}
+/* select p with class myClass  */
+p.myClass {
+    color: mediumvioletred;
+}
+/* select div with id myDiv */
+div#myDiv{
+    color: maroon;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Page2</title>
+    <link rel="icon" href="../images/google.png">
+</head>
+
+<body>
+    <center>
+        <b>
+            <font size="6" color='blue'>
+                Table
+            </font>
+            <br>
+            <br>
+            <table cellpadding="20" cellspacing="15" border="2">
+                <tr>
+                    <th colspan="2">
+                        web page
+                    </th>
+
+                    <th rowspan="2">
+                        Description
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <a target="_blank" href="./page3.html#start">home</a>
+                    </td>
+                    <td>
+                        <a href="./page3.html#end">search</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="green" align="center" colspan="3">
+                        all data is here!
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2" rowspan="2">
+                        the big box
+                    </td>
+
+                    <td align="center">
+                        <font color="red"> 1st one in the right</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        second one
+                    </td>
+                </tr>
+            </table>
+        </b>
+        <br>
+        <hr>
+        <b>
+            <font size="6" color="blue">
+                Form
+            </font>
+        </b>
+        <br>
+        <br>
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label for="name"> Name</label>
+                        <input id="name" type="text">
+                    </td>
+                    <td>
+                        <label for="password"> &nbsp; &nbsp; Password</label>
+                        <input id="password" type="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                       <label>gender:</label> 
+                        <div align='right'>
+                            <label for="male">Male</label>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <br>
+                            <label for="female">Female</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                        </div>
+                    </td>
+                    <td>
+                        <div align='right'>
+                          <label for="color">Choose a color:</label>
+                        <select name="color" size='3' id="color">
+                            <option value="red">red</option>
+                            <option value="green">green</option>
+                            <option value="blue">blue</option>
+                            <option value="yellow">yellow</option>
+                        </select>  
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2' align='right'>
+                        <input type="submit" value="submit data">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br>
+        <hr>
+        <div>
+            <br>
+            <b>
+                <font size="6" color="blue">
+                    Image Map
+                </font>
+            </b>
+        </div>
+        <br>
+        <img src="../images/google.png" usemap="#maps">
+        <map name="maps">
+            <area shape="rect" coords="72,25,166,70" href="https://www.w3schools.com/">
+            <area shape="circle" coords="35,35,35" href="https://www.google.com/">
+        </map>
+        <br>
+    </center>
+</body>
+
+</html>

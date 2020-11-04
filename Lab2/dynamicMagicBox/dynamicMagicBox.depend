@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1603113677 source:d:\iti\iti_labs\lab2\dynamicmagicbox\main.c
-	<stdio.h>
-	<stdlib.h>
-	<windows.h>
-

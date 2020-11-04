@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1603110830 source:d:\iti\iti_labs\lab2\calculateyourage\main.c
-	<stdio.h>
-	<stdlib.h>
-	<conio.h>
-

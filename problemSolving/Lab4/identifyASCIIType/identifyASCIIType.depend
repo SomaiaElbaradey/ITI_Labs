@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1603287414 source:d:\iti\iti_labs\lab4\identifyasciitype\main.c
+	<stdio.h>
+	<stdlib.h>
+
