@@ -7,6 +7,7 @@ div.addEventListener("click", function () {
     ',' + getRandomInt(0, 255) + ',' + getRandomInt(0, 255) +")"; 
     document.body.appendChild(lastChild);
 })
+
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
