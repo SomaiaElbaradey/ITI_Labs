@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body{
+            background-color: rgba(252, 217, 250, 0.233);
+        }
+        table {
+            margin: auto;
+            width: 500px;
+            border-spacing: 5px;
+            background-color: rgba(224, 250, 253, 0.356);
+        }
+
+        th {
+            border: 1px solid rgb(123, 208, 247);
+        }
+
+        div {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+
+        th,
+        td {
+            text-align: center; 
+            padding: 7px;
+        }
+
+        span {
+            color: red;
+        }
+
+        input[type=text] {
+            width: 60%;
+            box-sizing: border-box;
+            padding: 4px;
+        }
+
+        input[type=submit],
+        input[type=reset] {
+            background-color: #93e3f7;
+            border: none;
+            color: rgb(19, 44, 61);
+            padding: 8px 16px;
+            margin: 4px 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form>
+            <label for="name"> User Name </label>
+            <br>
+            <input id="name" type="text"><br><span></span>
+            <br>
+            <label for="age"> Age </label>
+            <br>
+            <input id="age" type="text"><br><span></span>
+            <br>
+            <label for="mail"> E-mail </label>
+            <br>
+            <input id="mail" type="text"><br><span></span>
+            <br>
+            <input type="submit">
+            <input type="reset" value="reset">
+            <br>
+        </form>
+        <table>
+            <tr>
+                <th>
+                    User Name
+                </th>
+                <th>
+                    Age
+                </th>
+                <th>
+                    E-mail
+                </th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

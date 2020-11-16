@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body {
+            background-color: rgba(252, 217, 250, 0.233);
+        }
+
+        h1 {
+            color: purple;
+        }
+
+        div {
+            width: 45%;
+            margin: auto;
+            text-align: center;
+        }
+
+        input {
+            width: 70%;
+            margin: 6px 0;
+            padding: 6px;
+        }
+
+        input[type="radio"] {
+            background-color: #eee;
+            width: auto;
+        }
+
+        input[type=submit] {
+            background-color: #93e3f7;
+            border: none;
+
+            color: rgb(19, 44, 61);
+        }
+
+        input[type=submit]:hover {
+            background-color: rgb(19, 44, 61);
+            color: #93e3f7;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>
+            Registration Form
+        </h1>
+        <form>
+            <input type="text" required placeholder="name"><br>
+            <input type="password" required placeholder="password"><br>
+            <input type="email" required placeholder="email"><br>
+            <input type="number" required placeholder="mobile number"><br>
+            <input type="text" required placeholder="job tittle"><br>
+            <input type="text" required placeholder="address"><br>
+            <label for="male">male</label>
+            <input type="radio" id="male" name="gender" value="male" onclick=myFunction(this.value)><br>
+            <label for="female">female</label>
+            <input type="radio" id="female" name="gender" value="female" onclick=myFunction(this.value)><br>
+            <input type="submit">
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
