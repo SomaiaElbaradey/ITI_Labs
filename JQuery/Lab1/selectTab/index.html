@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>tabs</title>
+    <script src="jquery-3.5.1.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #myTabs {
+            margin: auto;
+            width: 50%;
+            text-align: center;
+        }
+
+        ul {
+            margin-top: 50px;
+            display: inline-block;
+            margin-bottom: -4px;
+        }
+
+        ul li {
+            float: left;
+            list-style: none;
+            width: 150px;
+            line-height: 60px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #FFFFFF;
+            display: block;
+            color: rgb(71, 71, 71);
+        }
+
+        ul li a:hover {
+            text-decoration: none;
+            color: #000000;
+            background-color: #bcc0c2;
+        }
+
+        .selected {
+            color: #000000;
+            background-color: #bcc0c2;
+        }
+
+        #msg {
+            background-color: #bcc0c2;
+            color: rgb(0, 0, 0);
+            width: 50%;
+            margin-left: 468px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myTabs">
+        <ul>
+            <li class="tab One"><a href="#">Tab One</a></li>
+            <li class="tab Two"><a href="#">Tab Two</a></li>
+            <li class="tab Three"><a href="#">Tab Three</a></li>
+            <li class="tab Four"><a href="#">Tab Four</a></li>
+        </ul>
+    </div>
+    <div id="msg"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

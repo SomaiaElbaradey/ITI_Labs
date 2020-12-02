@@ -4,6 +4,7 @@ document.getElementById("stop").addEventListener("click", function () {
     myWindow.close();
 })
 var opened = setInterval(function(){
+    debugger;
     for (var i = 0; i < window.innerHeight; i++) {
         myWindow.moveBy(1, 1);
     } for (var i = 0; i < window.innerHeight; i++) {

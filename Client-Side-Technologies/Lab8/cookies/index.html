@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        input[type=text],input[type=number] {
+            width: 50%;
+            box-sizing: border-box;
+            padding: 4px;
+            display: block;
+        }
+
+        div {
+            width: 50%;
+            margin: auto;
+        }
+
+        input[type=submit] {
+            background-color: #93e3f7;
+            border: none;
+            color: rgb(19, 44, 61);
+            padding: 8px 16px;
+            margin: 4px 2px;
+        }
+        p{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form id="myForm">
+            <label for="userName" style="display:inline">Enter your name: </label>
+            <input type="text"  id="userName"><br>
+            <p id="nameComment"></p>
+            <label for="age">Enter your age: </label>
+            <input type="number"  required id="age"><br>
+            <p id="ageComment"></p>
+            <img id="male" value="male" src="pic/1.png">
+            <input type="radio" checked="checked" id="male" name="gender" value="male" onclick=myFunction(this.value)>
+            <img id="female" value="male" src="pic/2.png">
+            <input type="radio" id="female" name="gender" value="female" onclick=myFunction(this.value)><br>
+            <p id="genderComment"></p>
+            <label for="color">Choose your favourite color:</label>
+            <select name="color" id="color">
+                <option value="red">red</option>
+                <option value="green">green</option>
+                <option value="blue">blue</option>
+            </select>
+            <br><input type="submit" value="Register">
+        </form>
+    </div>
+    <script src="cookies.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

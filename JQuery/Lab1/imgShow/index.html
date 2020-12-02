@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>tabs</title>
+    <script src="jquery-3.5.1.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 150px;
+            padding: 10px;
+            margin-top: 50PX;
+        }
+
+        img:hover {
+            opacity: 0.6;
+        }
+
+        #myTabs {
+            margin: auto;
+            width: 70%;
+            text-align: center;
+        }
+
+        #slideShow {
+            width: max-content;
+            border: solid black;
+            display: none;
+        }
+
+        #content {
+            width: max-content;
+            margin: auto;
+        }
+
+        .arrow {
+            width: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myTabs">
+        <img src="img/1.png" value=1 class="img One">
+        <img src="img/2.png" value=2 class="img Two">
+        <img src="img/3.png" value=3 class="img Three">
+        <img src="img/4.png" value=4 class="img Four">
+        <img src="img/5.png" value=5 class="img Five">
+    </div>
+
+    <div class="content" id="content">
+        <img class="content arrow" id="lArrow">
+        <img class="content arrow" id="rArrow">
+        <div class="content" id="slideShow">
+            <img class="content" id="slideImg">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

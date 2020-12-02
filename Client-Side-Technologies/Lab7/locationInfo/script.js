@@ -12,6 +12,6 @@ document.getElementsByTagName("form")[0].addEventListener("submit",function(e){
     localStorage.setItem("job",inputs[4].value);
     localStorage.setItem("address",inputs[5].value);
     localStorage.setItem("gender",gender);
-    location.replace("file:///D:/ITI/ITI_Labs/Client-Side-Technologies/Lab7/locationInfo/welcome.html");
+    location.replace("./welcome.html");
 })
 // console.log(document.getElementsByTagName("input")[0].required);
