@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Libarary</title>
+    <style>
+        #numMsg,
+        #formMsg {
+            color: rgb(160, 5, 5);
+        }
+
+        body {
+            background-color: rgba(252, 217, 250, 0.233);
+
+        }
+
+        h1 {
+            color: purple;
+        }
+
+        #okBtn,
+        input[type=submit] {
+            background-color: #93e3f7;
+            border: none;
+            color: rgb(19, 44, 61);
+        }
+
+        #okBtn {
+            width: 15%;
+            padding: 6px;
+        }
+
+        input {
+            width: 60%;
+            margin: 6px 0;
+            padding: 6px;
+        }
+
+        input[type=submit]:hover {
+            background-color: rgb(19, 44, 61);
+            color: #93e3f7;
+        }
+
+        div {
+            width: 45%;
+            margin: auto;
+            text-align: center;
+        }
+
+        th {
+            border: 1px solid rgb(123, 208, 247);
+        }
+
+        th,
+        td {
+            text-align: center;
+            padding: 7px;
+        }
+
+        #divForm,
+        #tableDiv {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myDiv">
+        <span>How many Books?</span>
+        <input id="bookNum" required type="number">
+        <button id="okBtn">Ok</button><br>
+        <span id="numMsg"></span>
+    </div>
+    <div id="divForm">
+        <h1>
+            Enter Your Book Information
+        </h1>
+        <form id="bookForm">
+            <label for='bookName'>Book Name</label><br>
+            <input id="bookName" required type="text"><br>
+            <label for='price'>Book Price</label><br>
+            <input id="price" required type="number"><br>
+            <label for='authorName'>Author Name</label><br>
+            <input id="authorName" required type="text"><br>
+            <label for='authorMail'>Author Mail</label><br>
+            <input id="authorMail" required type="text"><br>
+            <input id="submit" type="submit"><br>
+            <span id="formMsg"></span>
+        </form>
+    </div>
+    <div id="tableDiv">
+        <table>
+            <tr>
+                <th>
+                    Book Name
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Author Name
+                </th>
+                <th>
+                    Author Mail
+                </th>
+            </tr>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
