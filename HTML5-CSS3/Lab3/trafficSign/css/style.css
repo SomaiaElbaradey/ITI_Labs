@@ -1,0 +1,77 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color:rgba(233, 231, 231, 0.404);
+}
+.containerParent{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    justify-content: space-between;
+}
+#myImg{
+    margin-top: 170px;
+    width:400px;
+    height: 400px;
+    animation: Movex;
+    animation-duration: 15s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    transition-property: all ;
+}
+#myImg:hover{
+    transform: rotate(45deg);
+}
+.container{
+    width: 150px;
+    height: 373px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: black;
+    border:solid black;
+    border-radius: 20px;
+}
+.color{
+    width:99px;
+    height: 99px;
+    border-radius: 99px;
+}
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: yellow;
+}
+.color:hover{
+    transform: scale(1.3);
+    filter: blur(2px);
+}
+.green:hover{
+    box-shadow:inset 3px 3px 20px rgb(40, 236, 40);
+}
+/* #sign{
+    width:75px;
+    height: 250px;
+    background-color: black;
+} */
+@keyframes Movex {
+    0%{
+        transform: translate(0,0) scaleX(1);   
+    }
+    45%{
+        transform: translate(-860px,0) scaleX(1);
+    }
+    50%{
+        transform: translate(-860px,0) scaleX(-1);
+    }
+    100%{
+        transform: translate(0px,0) scaleX(-1);
+    }
+}

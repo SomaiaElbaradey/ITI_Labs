@@ -57,12 +57,13 @@ var displayBooks = function () {
     var table = document.getElementsByTagName("table")[0];
     var row = document.createElement("tr");
     row.innerHTML = "<td>" + bookArr[i].name + "<td>" + bookArr[i].price + "<td>" + bookArr[i].Author.name
-      + "<td\>" + bookArr[i].Author.mail + "<td>" + "<button class='delete' value="+ i + ">Delete Book</button>";
+      + "<td\>" + bookArr[i].Author.mail + "<td>" + "<button class='delete' value=" + i + ">Delete Book</button>" +
+      "<td>" + "<button class='update' value=" + i + ">update </button>";
     table.appendChild(row);
   }
   //delete book 
-document.querySelectorAll('.delete').forEach(function (item) {
-  item.addEventListener('click', function (e) {
+  document.querySelectorAll('.delete').forEach(function (item) {
+    item.addEventListener('click', function (e) {
       console.log(e.target.value);
       bookArr.splice(e.target.value, 1);
       e.target.parentNode.parentNode.style.display = 'none';
@@ -70,7 +71,55 @@ document.querySelectorAll('.delete').forEach(function (item) {
       for (var i = 0; i < btns.length; i++) {
         btns[i].value--;
       }
+    })
   })
-})
+  //update book 
+  var index;
+  document.querySelectorAll('.update').forEach(function (item) {
+    item.addEventListener('click', function (e) {
+      index = e.target.value;
+      e.target.parentNode.parentNode.innerHTML = "<td id='updated'><input id='updatedName' required type='text'> <td ><input id='updatedPrice'"
+        + " required type='number'> <td><input id='updatedAuthor' required type='text'> <td><input id='updatedMail' required"
+        + "type='text'><td><button class='save'>save</button><td><button class='cancel' >cancel </button>";
+      //save
+      document.querySelectorAll('.save').forEach(function (item) {
+        item.addEventListener('click', function () {
+          // document.getElementsByTagName("td").remove();
+          var bookName = document.getElementById("updatedName").value;
+          var price = document.getElementById("updatedPrice").value;
+          var authorName = document.getElementById("updatedAuthor").value;
+          var authorMail = document.getElementById("updatedMail").value;
+          if (isNaN(price) || !isNaN(bookName) || !isNaN(authorName) || !mailRegExp.test(authorMail)) {
+            alert("you entered unvalid data");
+            throw("error");
+          }
+          bookArr[index] =
+          {
+            name: bookName,
+            price: price,
+            Author: {
+              name: authorName,
+              mail: authorMail
+            }
+          }
+          var rows = Array.from(document.getElementsByTagName('TD'));
+          rows.forEach(function (rowItem) {
+            rowItem.remove();
+          })
+          displayBooks();
+        })
+      })
+      //cancel
+      document.querySelectorAll('.cancel').forEach(function (item) {
+        item.addEventListener('click', function () {
+          var rows = Array.from(document.getElementsByTagName('TD'));
+          rows.forEach(function (rowItem) {
+            rowItem.remove();
+          })
+          displayBooks();
+        })
+      })
+    })
+  })
 }
 //var book = new Book("soom", 25, "issaac", "aeemis@gmail.com");

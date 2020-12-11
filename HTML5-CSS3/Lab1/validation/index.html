@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 0 auto;
+            margin-top: 100px;
+            padding: 20px;
+            background-color: aliceblue;
+            width: 40%;
+            text-align: center;
+        }
+
+        span {
+            color: red;
+        }
+
+        input {
+            margin: 20px;
+            width: 70%;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        input[type="submit"] {
+            border: none;
+            color: aliceblue;
+            background-color: rgb(4, 75, 138);
+            height: 30px;
+            width: 30%;
+        }
+
+        input[type="submit"]:hover {
+            color: rgb(4, 75, 138);
+            background-color: rgb(181, 215, 245);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <label for="name">Name :</label>
+            <input required pattern="^[a-zA-Z]+$" id="name" type="text"><br>
+            <span>the required name only a serious of alphabetical characters</span><br>
+            <label for="mail">E-mail :</label>
+            <input required id="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="email"><br>
+            <span>the required mail not include any special character than the @ sign</span>
+            <input type="submit">
+        </form>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

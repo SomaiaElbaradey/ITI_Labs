@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Range</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 0 auto;
+            margin-top: 100px;
+            height: 300px;
+            padding: 20px;
+            background-color: aliceblue;
+            width: 40%;
+            text-align: center;
+        }
+
+        h3 {
+            margin-top: 60px;
+            font-size: 25px;
+        }
+
+        input {
+            margin: 20px;
+            width: 70%;
+            opacity: 0.6;
+        }
+
+        input:hover {
+            opacity: 1;
+        }
+
+        input[type='range']::-webkit-slider-thumb {
+            width: 10px;
+            -webkit-appearance: none;
+            height: 10px;
+            cursor: ew-resize;
+            background: #000000;
+        }
+
+        #red {
+            -webkit-appearance: none;
+            background-color: red;
+        }
+
+        #green {
+            -webkit-appearance: none;
+            background-color: green;
+        }
+
+        #blue {
+            -webkit-appearance: none;
+            background-color: blue;
+        }
+
+        label {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="red">Red :</label>
+        <input value="0" min="0" max="255" id="red" type="range"><br>
+        <label for="green">Green :</label>
+        <input value="0" min="0" max="255" id="green" type="range"><br>
+        <label for="blue">Blue :</label>
+        <input value="0" min="0" max="255" id="blue" type="range">
+        <h3 id="text">
+            Hello! Was wondering if anyone could help with this?
+        </h3>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

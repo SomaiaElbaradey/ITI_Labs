@@ -42,8 +42,8 @@ document.getElementsByTagName("form")[0].addEventListener("submit", function (e)
     setCookie("age", inputs[1].value, date);
     setCookie("gender", gender, date);
     setCookie("color", color, date);
-
-    location.replace("http://127.0.0.1:5500/cookies/child..html");
+    
+    location.replace("http://127.0.0.1:5501/child..html");
 })
 /////////////////////////////////////////////////////////////
 console.log(document.cookie);

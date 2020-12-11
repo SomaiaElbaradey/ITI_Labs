@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Doc</title>
+  <script src='jquery.js'></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="sideMenu.js"></script>
+  <script>
+    $(function () {
+      $("#accordion").accordion();
+    });
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #myDiv {
+      width: 40px;
+      background-color: rgba(171, 212, 247, 0.884);
+    }
+
+
+    #accordion {
+      display: none;
+    }
+
+    #accordion span {
+      color: rgb(170, 36, 36);
+      font: 1em sans-serif;
+    }
+
+    #accordion .content {
+      height: 40px;
+      background-color: rgba(247, 251, 255, 0.781);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="myDiv">
+    <div id="accordion">
+      <span>Item 1</span>
+      <div class="content">
+        Content 1
+      </div>
+      <span>Item 2</span>
+      <div class="content">
+        Content 2
+      </div>
+      <span>Item 3</span>
+      <div class="content">
+        Content 3
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

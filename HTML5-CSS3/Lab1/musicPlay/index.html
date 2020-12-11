@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Play</title>
+    <script src="modernizr-2.6.2.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 20px;
+            font-style: oblique;
+            font-size: 40px;
+            color: rgb(0, 51, 40);
+        }
+
+        body {
+            background-image: url(./img/7.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #musicDiv {
+            margin: auto;
+            width: 70%;
+            margin-top: 10px;
+        }
+
+        #albumCap {
+            margin-top: 5px;
+            color: rgb(29, 109, 179);
+        }
+
+        button {
+            background-color: rgba(244, 250, 255, 0.459);
+        }
+
+        button:hover {
+            background-color: rgb(203, 224, 243);
+        }
+
+        #range {
+            width: 18%;
+            opacity: 0.7;
+        }
+
+        #range:hover {
+            opacity: 1;
+        }
+
+        .controlBtn {
+            box-sizing: border-box;
+            height: 23px;
+            padding: 2px;
+            padding-top: 2px;
+        }
+
+        div.mainList {
+            width: 30%;
+            margin-top: 30px;
+            font-style: oblique;
+            font-size: 17px;
+            font-style: bolder;
+        }
+
+        div.mainList li {
+            padding: 10px;
+        }
+
+        div.mainList ul {
+            background-color: rgba(227, 233, 238, 0.397);
+            list-style-type: none;
+        }
+
+        li:hover {
+            background-color: rgba(70, 164, 180, 0.521);
+        }
+
+        li a {
+            text-decoration: none;
+        }
+
+        #copyRange {
+            width: 30%;
+            margin-top: 15px;
+            -webkit-appearance: none;
+            background-color: rgba(109, 226, 214, 0.658);
+            border-radius: 5px;
+        }
+
+        #copyRange:hover {
+            -webkit-appearance: none;
+            background-color: rgb(109, 226, 214);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        Play Your Music
+    </header>
+    <div id="musicDiv">
+        <figure id="albumImg">
+            <img style="width:18%" src="./img/1.jpg">
+            <figcaption id="albumCap">Still Learning</figcaption>
+        </figure>
+        <div id="controlDiv">
+            <input type="range" id="range" value="0"><br>
+            <button id="play"><img class="controlBtn" src="./img/play2.png"></button>
+            <button id="pause"><img class="controlBtn" src="./img/pause.png"></button>
+            <button id="stop"><img class="controlBtn" src="./img/stop1.png"></button>
+            <button id="mute"><img class="controlBtn" src="./img/mute.png"></button>
+        </div>
+        <div class="mainList">
+            <ul>
+                <li id="music1">
+                    Still Learning
+                </li>
+                <li id="music2">
+                    Big Black Car
+                </li>
+                <li id="music3">
+                    Water Over Fire
+                </li>
+                <li id="music4">
+                    Total Eclipse Of The Heart
+                </li>
+                <li id="music5">
+                    Promise
+                </li>
+            </ul>
+        </div>
+        <audio id="musicAudio">
+            <source src="./audio/1/Still.mp3" type="audio/mpeg">
+            <source src="./audio/1/Super.ogg" type="audio/ogg">
+            Your browser does not support the audio element
+        </audio>
+        <footer>
+            <input type="range" id="copyRange" min='0' value="0"><br>
+        </footer>
+    </div>
+    <script src="jquery-3.5.1.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

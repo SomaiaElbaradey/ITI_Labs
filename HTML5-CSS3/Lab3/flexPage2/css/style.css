@@ -1,0 +1,77 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color:rgba(233, 231, 231, 0.404);
+}
+.containerParent{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    box-sizing: content-box;
+    padding: 30px;
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+}
+/* .container p {
+    margin-left: 100px;
+    color: rgba(58, 56, 65, 0.63);
+    font-size: 15px;
+    z-index: -100;
+} */
+.one{
+    background-image: url(../img/00.png);
+}
+.two{
+    background-image: url(../img/01.png);
+}
+.three{
+    background-image: url(../img/02.png);
+}
+.four{
+    background-image: url(../img/03.png);
+}
+.five{
+    background-image: url(../img/04.png);
+}
+.six{
+    background-image: url(../img/05.png);
+}
+.seven{
+    background-image: url(../img/07.png);
+}
+.eight{
+    background-image: url(../img/08.png);
+}
+.container:hover{
+
+    animation: fadeAppear;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+} 
+.container{
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition:  all .3s ease-in-out ;
+    -o-transition:  all .3s ease-in-out ;
+    transition:  all .3s ease-in-out ;  
+}
+@keyframes fadeAppear {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+        background-image: url(../img/09.png);
+        display: inline;
+    }
+}

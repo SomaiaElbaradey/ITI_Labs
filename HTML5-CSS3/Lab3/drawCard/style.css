@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face{
+    font-family: BayTavern;
+    src: url(./font/BayTavern-Bold.otf)
+}
+h3{
+    margin-left: 10px;
+    font-family: BayTavern;
+    font-size: 40px;
+    padding: 10px;
+}
+#down{
+    margin-top: 109px;
+    margin-left: 235px;
+}
+.container{
+    width:20%;
+    height: 400px;
+    margin:0 auto;
+    margin-top: 10px;
+    border: solid red;
+    border-radius: 15px;
+}
+#heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    }
+    #heart:before,
+    #heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: rgb(0, 0, 0);
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    }
+    #heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+#trapezoid {
+    border-bottom: 100px solid rgb(0, 0, 0);
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 0;
+    width: 30px;
+}
+.art{
+    margin-top: 50px;
+    margin-left: 100px;
+    transform: rotate(180deg);
+}
+.trap{
+    position: absolute;
+    top:183px;
+    left: 699px;
+    transform: scale(0.4);
+}

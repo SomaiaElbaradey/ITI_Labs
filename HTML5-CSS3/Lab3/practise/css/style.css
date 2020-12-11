@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color:rgba(233, 231, 231, 0.507);
+}
+div{
+    position: absolute;
+}
+.one{
+    width: 400px;
+    height: 400px;
+    margin-top:20px;
+    margin-left:20px;
+    box-sizing: content-box;
+}
+.container{
+    background-color: rgb(132, 188, 236);
+    z-index: -1;
+}
+.one:hover{
+     animation: fadeAppear; 
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+} 
+.one{
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition:  all .3s ease-in-out ;
+    -o-transition:  all .3s ease-in-out ;
+    transition:  all .3s ease-in-out ;  
+}
+@keyframes fadeAppear {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 0;
+    }
+}
