@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag n Drop</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgba(240, 248, 255, 0.5);
+        }
+        h1{
+            margin-top: 10px;
+            text-align: center;
+            color: rgb(8, 77, 138);
+        }
+        #myDiv{
+            width:50%;
+            text-align: center;
+            margin: 0 auto;
+            background-color: aliceblue;
+            margin-top: 70px;
+        }
+        img{
+            width:100px;
+            margin: 30px;
+        }
+        #ciss{
+            height:120px
+        }
+        #rock, #paper, #sciss{
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Paper.. Scissor.. Rock..</h1> 
+    <div id="myDiv">
+        <div id="rock" data-value="r">
+            <img  src="./img/1.png">
+        </div>
+        <div id="sciss" data-value="s">
+            <img  src="./img/2.png">
+        </div>
+        <div id="paper" data-value="p">
+            <img  src="./img/3.png">
+        </div>
+    </div>
+    <h1></h1> 
+<script src="script.js"></script>
+</body>
+
+</html>

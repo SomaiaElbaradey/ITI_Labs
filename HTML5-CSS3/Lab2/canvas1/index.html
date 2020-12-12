@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas.. Ciircles</title>
+    <style>
+        form {
+            margin-top: 10px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        input {
+            width: 80px;
+            height: 40px;
+            border: none;
+            background-color: #cbf3f8;
+        }
+
+        input:hover {
+            background-color: #27909e;
+            color: #cbf3f8;
+        }
+
+        input[type="submit"] {
+            width: 90px
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input value="#27909e" id="color" type="color"><br><br>
+        <input id="submit" value="Draw" type="submit">
+    </form>
+    <br>
+    <div>
+        <canvas id="myCanvas" width="1500" height="590" style="border:1px solid #d3d3d3;">
+            Your browser does not support the canvas element.
+        </canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
