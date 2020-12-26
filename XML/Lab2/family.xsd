@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="agedt">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="18"/>
+			<xs:maxInclusive value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="family">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="grandfather">
+					<xs:complexType mixed="true">
+						<xs:sequence>
+							<xs:element name="father">
+								<xs:complexType mixed="true">
+									<xs:sequence>
+										<xs:element name="mother" type="xs:string"/>
+										<xs:element name="daughter" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="age" type="agedt"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="son" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="age" type="xs:integer"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="uncle" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="aunt">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="sons" type="xs:integer"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

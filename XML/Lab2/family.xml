@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<family xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\iti-9months\xml\XMLDayTwo\my lab\family.xsd">
+	<grandfather>aborwash
+		<father>mosaad
+			<mother>ekhlas</mother>
+			<daughter age="22">nouran</daughter>
+			<son age="23">ahmed</son>
+		</father>
+		<uncle>karam</uncle>
+		<uncle>hamdy</uncle>
+		<aunt sons="2">nadia</aunt>
+	</grandfather>
+</family>

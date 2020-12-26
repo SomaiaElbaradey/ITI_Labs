@@ -1,0 +1,35 @@
+body
+{
+	background-color: #ffffff;
+	color: #000000;
+}
+CD{
+	display:block;
+	font-size:12px;
+	margin-bottom:20px;
+}
+TITLE{
+	color:Red;
+	font-size:15px;
+	
+}
+ARTIST{
+	color:Blue;
+	font-size:15px;
+}
+COUNTRY{
+	display:block;
+	margin-left:20px;
+}
+COMPANY{
+	display:block;
+	margin-left:20px;
+}
+PRICE{
+	display:block;
+	margin-left:20px;
+}
+YEAR{
+	display:block;
+	margin-left:20px;
+}

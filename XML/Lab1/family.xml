@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE family SYSTEM "D:\iti-9months\xml\XMLDayOne\my lab\family.dtd">
+<family>
+	<grandfather>aborwash
+		<father>mosaad
+			<mother>ekhlas</mother>
+			<daughter age="22" >nouran</daughter>
+			<son age="23">ahmed</son>
+		</father>
+		<uncle>karam</uncle>
+		<uncle>hamdy</uncle>
+		<aunt sons="2">nadia</aunt>
+	</grandfather>
+</family>
