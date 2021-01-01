@@ -1,0 +1,124 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    transition: all ease 0.3s;
+}
+
+/****************************************************************/
+/* header */
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+.header{
+    padding-left: 60px;
+    padding-right: 80px;
+    background: linear-gradient(to bottom right, #00cdcd 65%,#fff 65.1%, #fff 100%);
+}
+
+.navbar, .header{
+    background-color: #00cdcd!important;
+    color: white!important;
+    opacity: 1!important;
+}
+
+#navbarNavDropdown{
+    justify-content: flex-end;
+    padding-right: 70px;
+}
+
+.nav-item .active{
+    border-bottom: 2px solid;
+}
+
+.nav-item .active:hover{
+    border-style: none;
+}
+
+.navbar li:hover{
+    animation-name: navhover;
+    animation-duration: 3.3s;
+    border-bottom: 2px solid;
+}
+/**/
+@keyframes navhover {
+    0% { 
+        height: 20%;
+    }
+    
+    100% { 
+        height: 80%;
+    }    
+}
+
+.intro-desc h3{
+    font: 69px bolder;
+}
+
+.intro-desc p{
+    width: 400px;
+}
+
+.dropdown-menu .dropdown-item{
+    list-style: none;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    list-style: none!important;
+    color: white;
+    background-color: #00cdcd;
+}
+
+.read-btn{
+    background-color:white;
+    color: #00cdcd;
+    align-self: center;
+    border-radius: 30px;
+    height: 45px;
+    width: 166px;
+    font-size: 19px;
+}
+
+.read-btn:hover{
+    background-color:#f2ce5f;
+    color: white;
+}
+
+#navbarDropdownMenuLink {
+    animation: show_dropdown_menu 0.2s ease-in-out forwards;
+    visibility: visible;    
+}
+
+@keyframes show_dropdown_menu {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 1em;
+    }
+
+    .header .dropdown-menu {
+        display: none;
+    }
+}
+
+.bars{
+    display: none;
+}
+
+/* card*/
+/****************************************************************/
+.cards>div{
+    margin-top: 100px;
+    gap:5%;
+}
