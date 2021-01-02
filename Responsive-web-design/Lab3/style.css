@@ -121,4 +121,241 @@ body{
 .cards>div{
     margin-top: 100px;
     gap:5%;
+    margin-bottom: 100px;
+}
+
+.cards .card{
+    background-color: #00cdcd;
+    color: white;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.card-icon-div{
+    align-items: center;
+    border-radius: 100px;
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 100px;
+    font-size: 35px;
+    color: #00cdcd;
+}
+
+.card .card-title{
+    font-size: 23px;
+    padding: 5px;
+}
+
+.card .card-text{
+    font-size: 17px;
+    padding: 5px;
+}
+
+.cards .card:hover{
+    border-bottom: 5px #f2ce5f solid ;
+}
+
+.cards .card:hover .card-icon-div {
+    color: #f2ce5f; 
+}
+
+/* Business*/
+/****************************************************************/
+.Business-header{
+    margin-bottom: 30px;
+    line-height: 29px;
+}
+
+.Business-header span{
+    color: #00cdcd; 
+    font-size: 35px;
+}
+
+.Business-container{
+    background-image: url(./assets/gray-bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* main features */
+/****************************************************************/
+.features-circle{
+    background-image: url(./s.gif);
+    background-size: cover;
+}
+.main-features{
+    padding-top: 30px;
+    background-color: #fbfbfb;
+}
+
+.main-features p{
+    width: 90%;
+}
+.main-features .features-header h3,.main-features .features-header span{
+    margin: auto;
+    font-size: 53px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    color: #303952; 
+}
+
+.main-features span{
+    font-size: 29px;
+    color: #00cdcd!important; 
+}
+
+.main-features .features-header p{
+    margin: auto;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.main-features .right{
+    text-align: right;
+}
+
+.main-features .center-left{
+    padding-right: 30px;
+}
+
+.main-features .center-right{
+    padding-left: 30px;
+}
+
+.main-features .feature p{
+    line-height: 29px;
+    margin-bottom: 39px;
+}
+
+.main-features .feature h5{
+    line-height: 19px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 992px) {
+    .main-features .center-left{
+        padding-right: 0px;
+    }
+    
+    .main-features .center-right{
+        padding-left: 0px;
+    }
+}
+
+/* video */
+/**************************************************************************/
+.video{
+    margin-bottom: 100px;
+}
+
+.video h3{
+    font-size: 53px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    color: #303952; 
+}
+
+.video span{
+    color: #00cdcd; 
+}
+
+.video p{
+    margin-bottom: 50px;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.video img{
+    position: relative;
+}
+
+.video-back img{
+   background-color: rgba(0, 205, 205, 0.7)!important;
+}
+
+ /* App Price  */
+/**************************************************************************/
+.app-price{
+    background-color: #00cdcd;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.app-price h3{
+    font-size: 53px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    color: #303952; 
+}
+
+.app-price span{
+    color: #ffff; 
+}
+
+.app-price p{
+    margin-bottom: 50px;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.app-price .price-table{
+    background-color: white;
+}
+
+.price-table, .price-table h3{
+    color: #00cdcd;
+}
+
+.price-table ul{
+    list-style: none;
+    padding:0px;
+}
+
+.price-table ul li{
+    padding: 10px;
+    border-bottom: 1px solid #00cdcd;
+    color: #303952;
+}
+
+.price-table h4{
+    padding: 0.5rem;
+    margin-bottom: .5rem;
+    line-height: 1.2;
+    font-weight: 551;
+}
+
+.price-table h3{
+    font-size: 79px;
+    font-weight: 551;
+    padding: 0rem;
+}
+
+.price-table span{
+    font-size: 20px;
+}
+
+.price-table h5{
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+
+.price-table .list{
+    padding-bottom: 30px;
+}
+
+.price-table a{
+    background-color:#00cdcd;
+    border-radius: 30px;
+    height: 45px;
+    width: 166px;
+    font-size: 19px;
+    border-style: none;
+}
+
+.price-table a:hover{
+    background-color:#f2ce5f;
+    color: white!important;
 }
