@@ -4,6 +4,11 @@
     transition: all ease 0.3s;
 }
 
+@font-face {
+    font-family: Lato;
+    src: url(./font/Lato-Regular.ttf);
+}  
+
 /****************************************************************/
 /* header */
 
@@ -12,8 +17,8 @@ body{
 }
 
 .header{
-    padding-left: 60px;
-    padding-right: 80px;
+    padding-left: 2em;
+    padding-right: 3em;
     background: linear-gradient(to bottom right, #00cdcd 65%,#fff 65.1%, #fff 100%);
 }
 
@@ -102,6 +107,10 @@ body{
     }
 }
 
+.bars{
+    display: none;
+}
+
 @media (max-width: 992px) {
     .header {
         padding: 1em;
@@ -110,10 +119,9 @@ body{
     .header .dropdown-menu {
         display: none;
     }
-}
-
-.bars{
-    display: none;
+    .intro-desc{
+        padding-top: 3em;
+    }
 }
 
 /* card*/
@@ -159,6 +167,12 @@ body{
 
 .cards .card:hover .card-icon-div {
     color: #f2ce5f; 
+}
+
+@media (max-width: 992px) {
+    .card{
+        margin-bottom: 1em;
+    }
 }
 
 /* Business*/
@@ -243,6 +257,46 @@ body{
     .main-features .center-right{
         padding-left: 0px;
     }
+}
+
+/*screenshots*/
+/***************************************************************************/
+.screen{
+    background-image: url(./assets/gray-bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+.screenshots{
+    margin-bottom: 100px;
+}
+
+.screenshots h3{
+    margin-top: 40px;
+    font-size: 53px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    color: #303952; 
+}
+
+.screenshots span{
+    color: #00cdcd; 
+}
+
+.screenshots p{
+    margin-bottom: 50px;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.carousel-item .card{
+    background-color: #00cdcd00;
+    border: none;
+}
+
+.carousel-item {
+    margin-left:10%;
+    align-self: center;
 }
 
 /* video */
@@ -358,4 +412,146 @@ body{
 .price-table a:hover{
     background-color:#f2ce5f;
     color: white!important;
+}
+
+@media (max-width: 992px) {
+    .price-table {
+        margin-bottom: 1em;
+        }
+}
+
+/* common FQ */
+/******************************************************/
+.accordion-item{
+    margin-bottom: 25px;
+    box-shadow: 5px 10px 8px #c2c7c7a8;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.accordion-item h2 button{
+    display: block;
+    text-align: left;
+    padding: 15px 60px 15px 30px;
+    color: #fff;
+    position: relative;
+    background-color: #00cdcd;
+}
+
+.accordion-item .accordion-button{
+    box-shadow: none;
+    border: none;
+    border-radius: 15px;
+}
+
+.accordion-item .accordion-body{
+    padding: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #303952;
+    border-style: none;
+    background-color: #f7f7f7;
+    box-shadow: none;
+}
+
+.fqa .section-title h3{
+    margin-top: 2em;
+    font-size: 53px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    color: #303952; 
+}
+
+.fqa .section-title span{
+    color:#00cdcd;
+}
+
+.fqa .section-title p{
+    margin-bottom: 2em;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+/*git in touch*/
+/*************************************************************************/
+
+.git .section-title h3{
+    margin-top: 2em;
+    font-size: 53px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    color: #303952; 
+}
+
+.git .section-title span{
+    color:#00cdcd;
+}
+
+.git .section-title p{
+    margin-bottom: 2em;
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+
+.git-form .form-group input, .git-form .form-group textarea{
+    border: none;
+    border-radius:0;
+    border-bottom:2px solid #00cdcd;
+    font-weight:296;
+    padding:15px;
+    margin-bottom: 1.5em;
+}
+
+.git-form .form-group input:active, .git-form .form-group textarea, .git-form .form-group input{
+    box-shadow: none;
+    font-weight:296;
+}
+
+.git-form .form-group input:focus, .git-form .form-group textarea:focus{
+    border-bottom:2px solid #f2ce5f;
+}
+
+.git-form button{
+    border: none;
+    box-shadow: none;
+    background-color:#00cdcd;
+    color: #ffff;
+    text-align: center;
+    border-radius: 30px;
+    height: 45px;
+    width: 166px;
+    font-size: 16px;
+    margin-bottom: 1.5em;
+}
+
+.git-form button:hover{
+    background-color:#f2ce5f;
+    color: white;
+}
+
+.contact-info{
+    margin-top: 3em;
+    margin-bottom: 4em;
+}
+
+.contact-info span{
+    font-size: 49px;
+    color: #00cdcd;
+}
+
+.contact-info a{
+    text-decoration: none;
+}
+
+.contact-info a, .contact-info h5{
+    margin-top: 10px;
+    color:#303952;
+    line-height: 29px;
+    font-size: 19px;
+    width: 70%;
+    margin: auto;
 }
