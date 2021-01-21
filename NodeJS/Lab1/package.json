@@ -1,0 +1,15 @@
+{
+  "name": "lab1",
+  "version": "1.0.0",
+  "description": "\"to-do list cli\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Somaia Mostafa <SomayaElbaradey@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^7.0.0",
+    "fs-extra": "^9.1.0"
+  }
+}
