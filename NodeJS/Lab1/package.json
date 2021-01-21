@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^7.0.0",
-    "fs-extra": "^9.1.0"
+    "fs-extra": "^9.1.0",
+    "inquirer": "^7.3.3",
+    "lowdb": "^1.0.0"
   }
 }

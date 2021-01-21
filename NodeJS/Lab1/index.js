@@ -4,9 +4,9 @@ program.version('0.0.1');
 const fs = require('fs-extra');
 
 program
-    .option('-t, --tittle, <string>', 'the task itself')
-    .option('-i, --id <number>', 'the task id')
-    .option('-s, --status [string]', 'the task status');
+    .option('-t, --tittle, <type>', 'the task tittle')
+    .option('-i, --id <type>', 'the task id')
+    .option('-s, --status [type]', 'the task status');
 
 program.parse(process.argv);
 const options = program.opts();
@@ -31,10 +31,12 @@ process.argv.forEach(element => {
 function add(opts) {
     fs.readFile('./to-do.json', function (err, data) {
         let json = JSON.parse(data)
+        //set the id incrementally
         if (json[json.length - 1])
             id = (json[json.length - 1].id) + 1;
         else
             id = 0;
+
         json.push({
             'tittle': opts.tittle,
             'id': id,
@@ -48,8 +50,8 @@ function add(opts) {
 function list(options) {
     fs.readFile('./to-do.json', (err, data) => {
         let json = JSON.parse(data);
-        if (options.status){
-            json = json.filter((ele)=>{
+        if (options.status) {
+            json = json.filter((ele) => {
                 return ele.status == options.status;
             })
         }
