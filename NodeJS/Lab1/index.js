@@ -1,90 +1,96 @@
-const { Command } = require('commander');
+const { Command, action } = require('commander');
 const program = new Command();
 program.version('0.0.1');
 const fs = require('fs-extra');
 
 program
-    .option('-t, --tittle, <type>', 'the task tittle')
-    .option('-i, --id <type>', 'the task id')
-    .option('-s, --status [type]', 'the task status');
+    .command('add')
+    .requiredOption('-t, --tittle, <type>', 'the task tittle')
+    .description('add task in your to-do list')
+    .action((options) => { add(options) })
+program
+    .command('list')
+    .option('-s, --status, <type>', 'the task status')
+    .description('listing your to-do list, use -s --status to list depending on your status')
+    .action((options) => { list(options) })
+program
+    .command('edit')
+    .requiredOption('-t, --tittle, <type>', 'the task tittle')
+    .requiredOption('-i, --id <type>', 'the task id')
+    .option('-s, --status, <type>', 'the task status')
+    .description('edit an existing task in your to-do list')
+    .action((options) => { editList(options) })
+program
+    .command('delete')
+    .requiredOption('-i, --id <type>', 'the task id')
+    .description('delete task from your to-do list')
+    .action((options) => { deleteTask(options) })
 
 program.parse(process.argv);
-const options = program.opts();
-
-process.argv.forEach(element => {
-    switch (element) {
-        case 'add':
-            add(options)
-            break;
-        case 'list':
-            list(options)
-            break;
-        case 'delete':
-            deleteTask(options)
-            break;
-        case 'edit':
-            editList(options)
-            break;
-    }
-});
 
 function add(opts) {
     fs.readFile('./to-do.json', function (err, data) {
-        let json = JSON.parse(data)
-        //set the id incrementally
-        if (json[json.length - 1])
-            id = (json[json.length - 1].id) + 1;
-        else
-            id = 0;
+        if (err) return console.error(err);
+        let tasks = JSON.parse(data || "[]");
 
-        json.push({
+        //setting the id incrementally - I avoided using the length prop to avoid replicating the id if any has been deleted
+        const id = tasks.length === 0 ? 0 : (tasks[tasks.length - 1].id + 1);
+
+        //didn't understand clearly how to add using map function
+        // tasks.map((ele, i , arr) => {
+        //     console.log(i) 
+        //     console.log(id)
+        // });
+
+        tasks.push({
             'tittle': opts.tittle,
             'id': id,
             'status': opts.status || 'to-do'
         })
-        fs.writeFile("./to-do.json", JSON.stringify(json))
-        if (err) return console.error(err)
+        fs.writeFile("./to-do.json", JSON.stringify(tasks), err => {
+            if (err) return console.error(err)
+            console.log('the tittle has been added successfully!')
+        })
     })
 }
 
 function list(options) {
     fs.readFile('./to-do.json', (err, data) => {
-        let json = JSON.parse(data);
+        if (err) return console.error(err)
+        let tasks = JSON.parse(data);
         if (options.status) {
-            json = json.filter((ele) => {
+            tasks = tasks.filter((ele) => {
                 return ele.status == options.status;
             })
         }
-        if (err) return console.error(err)
-        console.log(json);
-        return json
+        console.log(tasks);
+        return tasks
     })
 }
 
 function deleteTask(options) {
     fs.readFile('./to-do.json', (err, data) => {
-        let json = JSON.parse(data);
-        json = json.filter(ele => {
+        if (err) return console.error(err)
+        let tasks = JSON.parse(data);
+        tasks = tasks.filter(ele => {
             return ele.id != options.id;
         });
-        fs.writeJson('./to-do.json', json, err => {
+        fs.writeJson('./to-do.json', tasks, err => {
             if (err) return console.error(err)
             console.log('the tittle has been deleted successfully!')
         })
-        if (err) return console.error(err)
     })
 }
 
 function editList(options) {
-    if (!options.id)
-        throw "you must specify the id of the task you wanna edit"
     fs.readFile('./to-do.json', (err, data) => {
+        if (err) return console.error(err)
         let found = 0;
-        let json = JSON.parse(data);
-        json.forEach(element => {
+        let tasks = JSON.parse(data);
+    
+        tasks.map(element => {
             if (element.id == options.id) {
                 if (options.status) {
-                    console.log(options)
                     if (options.status == "done" || options.status == "in progress" || options.status == "to-do") {
                         element.status = options.status;
                     }
@@ -96,10 +102,9 @@ function editList(options) {
             }
         });
         if (!found) throw 'the specified id does not exist'
-        fs.writeJson('./to-do.json', json, err => {
+        fs.writeJson('./to-do.json', tasks, err => {
             if (err) return console.error(err)
             console.log('the task info has been edited successfully!')
         })
-        if (err) return console.error(err)
     })
 }
