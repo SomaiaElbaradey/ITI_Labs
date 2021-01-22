@@ -10,8 +10,9 @@ program
 
 program.parse(process.argv);
 const options = program.opts();
-
+// here you're not using the commander lib, the above code is not necessary at all, you're just using it for the options part, you're mixing things from the lib, and it's confusing.
 process.argv.forEach(element => {
+    //although this will work, but if your user made something like node index.js add add add add, this command will be added 4 times, since the arguments add will be repeated 4 times
     switch (element) {
         case 'add':
             add(options)
@@ -30,24 +31,30 @@ process.argv.forEach(element => {
 
 function add(opts) {
     fs.readFile('./to-do.json', function (err, data) {
-        let json = JSON.parse(data)
+        let json = JSON.parse(data) 
+        //if the data is empty, this function will throw an error
+        // JSON.parse(data || "[]") to guard against empty files
+        // json is a terrible var name, also this mi
         //set the id incrementally
+       // const id = json.length === 0 ? 0 : (json.length + 1);
         if (json[json.length - 1])
             id = (json[json.length - 1].id) + 1;
         else
             id = 0;
-
+    //use map function, don't mutate 
         json.push({
             'tittle': opts.tittle,
             'id': id,
             'status': opts.status || 'to-do'
         })
         fs.writeFile("./to-do.json", JSON.stringify(json))
+        //this line should be at the begining of the function. you handle the error first, because if you don't, the above functions will throw
         if (err) return console.error(err)
     })
 }
 
 function list(options) {
+    //same comments as the above
     fs.readFile('./to-do.json', (err, data) => {
         let json = JSON.parse(data);
         if (options.status) {
@@ -81,6 +88,7 @@ function editList(options) {
     fs.readFile('./to-do.json', (err, data) => {
         let found = 0;
         let json = JSON.parse(data);
+        //use map function instead
         json.forEach(element => {
             if (element.id == options.id) {
                 if (options.status) {
