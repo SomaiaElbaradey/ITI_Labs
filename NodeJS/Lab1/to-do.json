@@ -1,1 +1,22 @@
-[{"tittle":"edited","id":1,"status":"done"},{"tittle":"edited","id":2,"status":"in progress"},{"tittle":"first task10","id":3,"status":"to-do"},{"tittle":"first task52","id":4,"status":"to-do"}]
+[
+    {
+        "tittle": "edited",
+        "id": 1,
+        "status": "done"
+    },
+    {
+        "tittle": "edited",
+        "id": 2,
+        "status": "in progress"
+    },
+    {
+        "tittle": "first task10",
+        "id": 3,
+        "status": "to-do"
+    },
+    {
+        "tittle": "first task52",
+        "id": 4,
+        "status": "to-do"
+    }
+]
