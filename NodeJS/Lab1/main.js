@@ -1,3 +1,6 @@
+//! you can add this file to your .gitignore
+
+
 // var inquirer = require('inquirer');
 
 // const low = require('lowdb')
