@@ -1,3 +1,27 @@
+body{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    background-color:rgba(245, 225, 245, 0.315)
+}
+div{
+    border: rgb(182, 26, 182) 2px solid;
+    margin-bottom: 50px;
+}
 h1{
     color:rgb(182, 26, 182);
+}
+h2{
+    color:rgb(97, 8, 89);
+}
+a{
+    color:rgb(27, 200, 223);
+    font-size: 29px;
+}
+a:hover{
+    color:rgb(15, 125, 139);
+}
+img{
+    margin: 30px;
 }
