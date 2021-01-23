@@ -4,10 +4,10 @@ const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('../lab1/to-do.json')
 const db = low(adapter)
-const port = 2929;
 const path = require('path');
 
-let tasksData = db.getState()
+const port = 2929;
+const tasksData = db.getState()
 let tasksInfo = '';
 
 tasksData.forEach(element => {
