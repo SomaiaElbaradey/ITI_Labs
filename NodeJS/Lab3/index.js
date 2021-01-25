@@ -136,7 +136,7 @@ app.patch('/todos/:id', function (req, res) {
     users = require('./users.json');
     users.forEach((element) => {
         if (element.id == id) {
-            //I should get the username and update the to do file.
+            // there's no id for specific todo  which means there's no option to edit one for now
             element.tittle = tittle;
             element.status = status;
             fs.writeFile("data.json", JSON.stringify(users), "utf8");
