@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-dos</title>
+</head>
+
+<body>
+    <table>
+        <th>User Name</th>
+        <th>tittle</th>
+        <th>Status</th>
+        {{#each todos}}
+        <tr>
+            <td>{{this.userName}}</td>
+            <td>{{this.tittle}}</td>
+            <td>{{this.status}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</body>
+
+</html>

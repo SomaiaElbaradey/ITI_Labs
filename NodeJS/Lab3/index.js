@@ -2,13 +2,11 @@ const express = require('express')
 const app = express()
 const fs = require('fs-extra')
 const bodyParser = require('body-parser')
-const os = require('os')
-// const path = require('path')
-// const { stringify } = require('querystring')
-// const deviceUser = os.userInfo().username
 const { nanoid } = require('nanoid')
-const { use } = require('express/lib/application')
-// const toDosData = require('./helpers/getData')
+const { toDosData } = require('./helpers/getData')
+const { usersData } = require('./helpers/getUsers')
+
+app.set('view engine', 'hbs');
 
 app.use(express.static("public"));
 //middleware to parse the json body to deal with it 
@@ -19,143 +17,116 @@ let logs = (req, res, next) => {
     console.log('the request method:', req.method);
     console.log('the current time:', new Date());
     next();
-}
+};
 app.use(logs);
 //global error handler 
 app.use(function (err, req, res, next) {
-    res.status(500).send('My internal server error!')
+    res.status(500).send('My internal server error!');
     next();
 });
 
-function getToDoData() {
-    fs.readFile("./toDos.json", function (err, data) {
-        if (err) return console.error(err);
-        const toDos = JSON.parse(data);
-        return toDos;
-    })
-}
-
-function getUsersData() {
-    fs.readFile("./users.json", function (err, data) {
-        if (err) return console.error(err);
-        const users = JSON.parse(data);
-        return users;
-    })
-}
+app.get('/toDosView',async function(req, res) {
+    res.locals = {
+        todos: await toDosData()
+    }
+    res.render('todos');
+});
 
 //get all
-app.get('/todos', function (req, res) {
-    fs.readFile("./toDos.json", function (err, data) {
-        if (err) return console.error(err);
-        const toDos = JSON.parse(data);
-        res.status(200).send(toDos)
-    })
-})
+app.get('/todos', async function (req, res) {
+    const todos = await toDosData();
+    res.status(200).send(todos);
+});
 
 //get for one user
-app.get('/todos/:userName', function (req, res) {
-    let { userName } = req.params
-    fs.readFile("./toDos.json", function (err, data) {
-        if (err) return console.error(err);
-        const toDos = JSON.parse(data);
-        let list = [];
-        toDos.forEach(element => {
-            if (element.userName == userName) {
-                list.push(element)
-            }
-        });
-        res.status(200).send(list)
-    })
-})
+app.get('/todos/:userName', async function (req, res) {
+    let { userName } = req.params;
+    const todos = await toDosData();
+    let list = [];
+    todos.forEach(element => {
+        if (element.userName == userName) {
+            list.push(element)
+        }
+    });
+    res.status(200).send(list);
+});
 
 //update one
-app.post('/todos', function (req, res) {
+app.post('/todos', async function (req, res) {
     let { userName, tittle } = req.body;
-    fs.readFile("./users.json", function (err, data) {
-        if (err) return console.error(err);
-        const users = JSON.parse(data);
-        users.forEach(element => {
-            if (element.userName == userName) {
-                if (element.loggedIn == true) {
-                    fs.readFile("./toDos.json", function (err, data) {
-                        if (err) return console.error(err);
-                        let toDos = JSON.parse(data);
-                        toDos.push({
-                            'tittle': tittle,
-                            'userName': userName,
-                            'status': 'to-do'
-                        })
-                        fs.writeFile("./toDos.json", JSON.stringify(toDos), err => {
-                            if (err) return console.error(err)
-                            console.log('the tittle has been added successfully!')
-                        })
-                    })
+    const users = await usersData();
+    let found = 0;
+    users.forEach(async function (element) {
+        if (element.userName == userName) {
+            if (element.loggedIn == true) {
+                found = 1;
+                const todos = await toDosData();
+                const newTodo = {
+                    'tittle': tittle,
+                    'userName': userName,
+                    'status': 'to-do'
                 }
+                const allTodos = todos.concat(newTodo);
+                fs.writeFile("./toDos.json", JSON.stringify(allTodos), err => {
+                    if (err) return console.error(err)
+                    console.log('the tittle has been added successfully!')
+                })
             }
-        });
-        res.status(200).send('the to do has been created successfully!')
-    })
+        }
+    });
+    if (found) res.status(200).send('the to do has been created successfully!')
+    else res.status(422).send('invalid attributes!')
 })
 
 //register
-app.post('/register', function (req, res) {
+app.post('/register', async function (req, res) {
     let { userName, password, firstName } = req.body
     let valid = 1;
     if (!userName || !password || !firstName) valid = 0
     if (!valid) res.status(422).send('invalid attributes!')
-    else {
-        fs.readFile("./users.json", function (err, data) {
-            if (err) return console.error(err);
-            let user = JSON.parse(data);
-            user.push({
-                'userName': userName,
-                'password': password,
-                'firstName': firstName,
-                "loggedIn": false,
-                "id": nanoid()
-            })
-            fs.writeFile("./users.json", JSON.stringify(user), err => {
-                if (err) return console.error(err)
-                res.status(200).send('user was registered successfully!')
-            })
-        })
+    const users = await usersData();
+    const newUser = {
+        'userName': userName,
+        'password': password,
+        'firstName': firstName,
+        "loggedIn": false,
+        "id": nanoid()
     }
-})
-
-//login
-app.post('/login', function (req, res) {
-    let { userName } = req.body;
-    fs.readFile("./users.json", (err, data) => {
-        if (err) return console.error(err);
-        let users = JSON.parse(data);
-        users.forEach(element => {
-            if (element.userName == userName) {
-                element.loggedIn = true;
-                fs.writeFile("./users.json", JSON.stringify(users), err => {
-                    if (err) return console.error(err)
-                    res.status(200).send('the user has been logged In successfully!')
-                })
-            }
-        })
-        res.status(401)
+    const allUsers = users.concat(newUser);
+    fs.writeFile("./users.json", JSON.stringify(allUsers), err => {
+        if (err) return console.error(err)
+        res.status(200).send('user was registered successfully!')
     })
 })
 
+//login
+app.post('/login', async function (req, res) {
+    let { userName } = req.body;
+    let users = await usersData();
+    users.forEach(element => {
+        if (element.userName == userName) {
+            element.loggedIn = true;
+            fs.writeFile("./users.json", JSON.stringify(users), err => {
+                if (err) return console.error(err)
+                res.status(200).send('the user has been logged In successfully!')
+            })
+        }
+    })
+    res.status(401)
+})
+
 //delete 
-app.delete('/todos/:id', function (req, res) {
-    let { id } = req.params
-    fs.readFile("./users.json", function (err, data) {
-        if (err) return console.error(err);
-        let users = JSON.parse(data);
-        users = users.filter(element => {
-           return element.id != id
-        })
-        fs.writeFile("./users.json", JSON.stringify(users), err => {
-            if (err) return console.error(err)
-            res.status(200).send("the user has been deleted successfully!")
-        })
-    }) 
-    res.status(401)       
+app.delete('/todos/:id', async function (req, res) {
+    let { id } = req.params;
+    let users = await usersData();
+    users = users.filter(element => {
+        return element.id != id;
+    })
+    fs.writeFile("./users.json", JSON.stringify(users), err => {
+        if (err) return console.error(err)
+        res.status(200).send("the user has been deleted successfully!");
+    })
+    res.status(401);
 })
 
 //Edit the todo 

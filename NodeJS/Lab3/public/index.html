@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Dos</title>
+</head>
+
+<body>
+    <div>
+        <h1>Your Tasks</h1>
+        <lu id="tasks"></lu>
+    </div>
+    <script>
+        fetch('/todos')
+            .then(res => res.json())
+            .then(res =>
+                res.forEach((element, index) => {
+                    let tag = document.createElement("li");
+                    tag.innerText = res[index].tittle;
+                    document.getElementById('tasks').appendChild(tag)
+                })
+            )    
+    </script>
+</body>
+
+</html>

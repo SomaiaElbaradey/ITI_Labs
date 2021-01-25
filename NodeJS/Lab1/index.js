@@ -31,23 +31,20 @@ program.parse(process.argv);
 function add(opts) {
     fs.readFile('./to-do.json', function (err, data) {
         if (err) return console.error(err);
-        let tasks = JSON.parse(data || "[]");
+        const tasks = JSON.parse(data || "[]");
 
         //setting the id incrementally - I avoided using the length prop to avoid replicating the id if any has been deleted
         const id = tasks.length === 0 ? 0 : (tasks[tasks.length - 1].id + 1);
 
         //didn't understand clearly how to add using map function
-        // tasks.map((ele, i , arr) => {
-        //     console.log(i) 
-        //     console.log(id)
-        // });
-
-        tasks.push({
+        const newTask = {
             'tittle': opts.tittle,
             'id': id,
             'status': opts.status || 'to-do'
-        })
-        fs.writeFile("./to-do.json", JSON.stringify(tasks), err => {
+        }
+        const allTasks = tasks.concat(newTask)
+
+        fs.writeFile("./to-do.json", JSON.stringify(allTasks), err => {
             if (err) return console.error(err)
             console.log('the tittle has been added successfully!')
         })
