@@ -19,13 +19,8 @@ let logs = (req, res, next) => {
     next();
 };
 app.use(logs);
-//global error handler 
-app.use(function (err, req, res, next) {
-    res.status(500).send('My internal server error!');
-    next();
-});
 
-app.get('/toDosView',async function(req, res) {
+app.get('/toDosView', async function (req, res) {
     res.locals = {
         todos: await toDosData()
     }
@@ -33,9 +28,14 @@ app.get('/toDosView',async function(req, res) {
 });
 
 //get all
-app.get('/todos', async function (req, res) {
-    const todos = await toDosData();
-    res.status(200).send(todos);
+app.use('/todos', async function (req, res, next) {
+    try {
+        const todos = await toDosData();
+        res.status(200).send(todos);
+    }
+    catch {
+        next()
+    }
 });
 
 //get for one user
@@ -144,5 +144,10 @@ app.patch('/todos/:id', function (req, res) {
     })
     res.send('user has been updated successfully');
 })
+
+//global error handler 
+app.use(function (err, req, res, next) {
+    res.status(500).send('My internal server error!');
+});
 
 app.listen(2919)
