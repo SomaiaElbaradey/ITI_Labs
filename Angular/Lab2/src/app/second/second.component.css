@@ -1,0 +1,9 @@
+.slider_button{
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+}
+
+.form__group{
+    margin-top: 30px;
+}

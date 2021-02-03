@@ -1,0 +1,7 @@
+<div class="form__group">
+    <h1>Text changer:</h1>
+    <hr>
+    <input type="input" placeholder="enter your text here" [(ngModel)]="text" />
+    <input type="button" value="reset" (click)='onChange($event)'><br>
+    <label for="name">{{text}}</label>
+</div>

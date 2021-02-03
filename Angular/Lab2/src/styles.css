@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+    background-color: #3d3d49;
+}
+
+.form__group{
+    margin: 0 auto;
+    width: 80%;
+}
+
+input[type=button]{
+    padding: 15px;
+    border-radius: 5px;
+    outline: none;
+    background-color: #222227;
+    margin-left: 5px;
+    color: #cfd2d7;
+    border: none;
+}
+
+input[type=button]:hover{
+    cursor: pointer;
+    background-color: #292930d5;
+}

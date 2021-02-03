@@ -1,0 +1,21 @@
+input{
+    width: 50%;
+    font-size: 17px;
+    text-align: center;
+    color: #13797a;
+    padding: 7px;
+}
+
+label{
+    color: #37d4d6;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+}
+
+input[type=button]{
+    padding: 9px;
+    width: 20%;
+    color: white;
+}

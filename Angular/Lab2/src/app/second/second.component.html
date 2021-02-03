@@ -1,0 +1,9 @@
+<div class="form__group">
+    <img width="499" src={{image}} alt="img">
+    <div class="slider_button ">
+        <input type="button" value="Previous" (click)="previous()" />
+        <input type="button" value="Next" (click)="next()" />
+        <!-- <input type="button" value="Stop" (click)="stop()"/> -->
+        <input type="button" [value]="slide" (click)="slideShow($event)" />
+    </div>
+</div>
