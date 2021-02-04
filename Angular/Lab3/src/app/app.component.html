@@ -1,2 +1,2 @@
-<app-search></app-search>
-<app-list></app-list>
+<app-search (searching)="listSearching($event)"></app-search>
+<app-list [searchKey]="searchedKey"></app-list>

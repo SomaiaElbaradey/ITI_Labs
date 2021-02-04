@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  searchedKey:string;
+  listSearching(e) {
+    this.searchedKey = e;
+  }
   title = 'Lab3';
 }

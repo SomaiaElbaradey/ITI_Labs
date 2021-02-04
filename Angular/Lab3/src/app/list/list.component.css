@@ -1,0 +1,15 @@
+div{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+div h4{
+    color: rgb(211, 241, 247);
+    font-size: 19px;
+}
+
+div p{
+    color: rgba(175, 195, 201, 0.877);
+    font-size: 15px;
+}
