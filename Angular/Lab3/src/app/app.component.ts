@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  searchedKey:string;
+  emittedKey: string = '';
+
   listSearching(e) {
-    this.searchedKey = e;
+    if (e == "Backspace") {
+      if(this.emittedKey != '') this.emittedKey = this.emittedKey.slice(0, -1);
+    } else {
+      this.emittedKey = this.emittedKey.concat(e);
+    }
   }
+
   title = 'Lab3';
 }

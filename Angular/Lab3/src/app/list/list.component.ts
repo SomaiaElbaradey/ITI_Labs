@@ -6,7 +6,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 
-export class ListComponent implements OnChanges {
+export class ListComponent  {
   constructor() { }
 
   list = [
@@ -29,19 +29,21 @@ export class ListComponent implements OnChanges {
   ]
 
   @Input('searchKey') searchValue;
-  search: string = '';
-  filteredlist: Array<Object> = this.list;
 
-  ngOnChanges() {
-    if (this.searchValue) {
-      console.log(this.filteredlist)
-      this.search = this.search.concat(this.searchValue);
-    }
-    if (this.searchValue == "Backspace") {
-      this.search = this.search.slice(0, -1);
-    }
-    this.filteredlist = this.list.filter((item) => {
-      return item.name.includes(this.search)
-    });
-  }
+  // filteredlist: Array<Object> = this.list;
+
+  // ngOnChanges(changes: any) {
+  //   if (this.searchValue) {
+  //     if (this.searchValue == "Backspace") {
+  //       this.search = this.search.slice(0, -1);
+  //     } else {
+  //       this.search = this.search.concat(this.searchValue);
+  //     }
+  //   }
+  //   console.log(this.search)
+  //   this.filteredlist = this.list.filter((item) => {
+  //     return item.name.includes(this.search);
+  //   });
+  // }
+  
 }

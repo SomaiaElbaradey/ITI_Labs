@@ -1,4 +1,13 @@
-<div *ngFor="let task of filteredlist; index as i">
+<!-- <ng-template ngFor let-task [ngForOf]="filteredlist" let-i="index"> 
     <h4>{{filteredlist[i].name}}</h4>
     <p>{{filteredlist[i].task}}</p>
+</ng-template> -->
+
+<div *ngFor="let task of list; index as i">
+    
+    <div *ngIf="task.name.includes(searchValue);">
+        <h4>{{task.name}}</h4>
+        <p>{{task.task}}</p>
+    </div>
+
 </div>

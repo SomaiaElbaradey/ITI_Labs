@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 
 export class SearchComponent implements OnInit {
-  
+
   constructor() { }
 
   @Output('searching') searchedValue = new EventEmitter();
@@ -15,8 +15,8 @@ export class SearchComponent implements OnInit {
   search(e) {
     if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 97 && e.keyCode <= 122)) {
       this.searchedValue.emit(e.key)
-    } 
-    if(e.keyCode == 8){
+    }
+    if (e.keyCode == 8) {
       this.searchedValue.emit(e.key)
     }
   }
