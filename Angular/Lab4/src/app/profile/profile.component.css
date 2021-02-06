@@ -1,0 +1,10 @@
+.about{
+    margin-top: 100px;
+    padding: 30px;
+    background-color: rgba(110, 109, 109, 0.452);
+    font-style: oblique;
+}
+
+.about h2{
+    text-decoration: underline;
+}

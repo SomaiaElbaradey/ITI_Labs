@@ -1,1 +1,85 @@
-<p>home works!</p>
+<div style="background-color: #111111; padding: 50px 0;" class="text-light">
+    <div class="container">
+        <div *ngIf="!registered">
+            <input type="submit" value="Register" class="form-control field-submit top-btn" (click)="allowRegister()">
+        </div>
+        <!-- registation section -->
+        <div *ngIf="registered" class="row">
+            <div class="col-md-6 align-self-start text-center text-md-left">
+                <div class="row form-content">
+                    <div class="col-12">
+                        <div class="step-title">
+                            <h2 class="featured">registation Form</h2>
+                            <p>Please Enter your data.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- registration form -->
+                <div class="row text-center form-content">
+                    <div class="col-12">
+                        <form [formGroup]="myForm" #registerForm="ngForm" class="step-group">
+                            <input type="text" formControlName="name" required name="name"
+                                class="form-control field-name" placeholder="Name">
+                            <span *ngIf="!validForm && myForm.controls.name.invalid">
+                                <span *ngIf="myForm.controls.name.errors.required" class="invalid">Name is
+                                    required.</span>
+                                <span *ngIf="myForm.controls.name.errors.maxlength" class="invalid">
+                                    Name must be less than 8 characters.
+                                </span>
+                                <span *ngIf="myForm.controls.name.errors.pattern" class="invalid">
+                                    Name must characters only.
+                                </span>
+                            </span>
+                            <input type="email" formControlName='mail' name="email" class="form-control field-email"
+                                placeholder="Email">
+                            <span *ngIf="!validForm && myForm.controls.mail.invalid">
+                                <span *ngIf="myForm.controls.mail.errors.required" class="invalid">Email is
+                                    required.</span>
+                                <span *ngIf="myForm.controls.mail.errors.emailDomain" class="invalid"> Email domain
+                                    musr be "angular.com".</span>
+                            </span>
+                            <input type="text" formControlName='age' name="age" class="form-control field-age"
+                                placeholder="Age">
+                            <span *ngIf="!validForm && myForm.controls.age.invalid">
+                                <span *ngIf="myForm.controls.age.errors.required" class="invalid">Age is
+                                    required.</span>
+                                <span *ngIf="myForm.controls.age.errors.ageValidator" class="invalid"> Age must
+                                    be a number between 18 and 60.</span>
+                            </span>
+                            <input type="submit" value="Register" class="form-control field-submit"
+                                (click)="registration(registerForm)">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- register image -->
+            <div class="content-images col-12 col-md-6 pl-md-5 d-none d-md-block">
+                <!-- Step 1 -->
+                <div class="gallery">
+                    <div class="mask-radius"></div>
+                    <img src={{image}} class="fit-image" width="400" alt="register Image">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-secondary table-hover table-striped">
+                <thead class="">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody class="">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

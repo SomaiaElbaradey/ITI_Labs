@@ -1,0 +1,9 @@
+.about{
+    padding: 30px;
+    background-color: rgba(110, 109, 109, 0.26);
+    font-style: oblique;
+}
+
+.about h2{
+    text-decoration: underline;
+}
