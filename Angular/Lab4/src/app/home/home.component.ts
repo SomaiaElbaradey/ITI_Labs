@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -20,12 +20,14 @@ export class HomeComponent implements OnInit {
       Validators.required,
       ageValidator
     ]),
-    mail: new FormControl('', [
+    email: new FormControl('', [
       Validators.required,
       emailValidator
     ])
   })
   validForm = true;
+  list = [{name:"Somaia", age:23, email:"SomaiaMostafa@angular.com"}];
+  metaData = ["Name", "Age", "Email"];
 
   constructor() { }
 
@@ -36,12 +38,15 @@ export class HomeComponent implements OnInit {
     this.registered = true;
   }
 
+  @Output('lastPerson') myEvent = new EventEmitter();
+
   registration(e) {
     if (this.myForm.valid) {
+      this.myEvent.emit(this.myForm.value);
       this.validForm = true;
-    } else {
-      this.validForm = false;
+      this.list.push(this.myForm.value);
     }
+    else this.validForm = false;
   }
 
 }

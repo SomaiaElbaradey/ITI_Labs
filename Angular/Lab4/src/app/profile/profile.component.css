@@ -1,10 +1,14 @@
-.about{
-    margin-top: 100px;
-    padding: 30px;
-    background-color: rgba(110, 109, 109, 0.452);
+.col-md-6 {
     font-style: oblique;
 }
 
-.about h2{
-    text-decoration: underline;
+.step-title h1 {
+    margin: 90px 0;
+    font-size: 29px;
+    color: rgb(202, 202, 202);
+}
+
+.step-detail h3 {
+    color: rgb(170, 169, 169);
+    font-size: 21px;
 }

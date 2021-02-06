@@ -10,4 +10,7 @@ export class AppComponent {
   searchMyList(e){
     this.searchListValue=e
   }
+  theLastAdded(e){
+    console.log(e)
+  }
 }
