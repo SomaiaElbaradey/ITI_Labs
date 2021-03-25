@@ -1,0 +1,9 @@
+Crs_Id,Crs_Name,Crs_Duration,Top_Id
+400,unix,50,4
+500,sql server,60,2
+900,oracle,50,2
+300,oop,80,1
+800,java,60,1
+600,c#,80,1
+200,c progamming,60,1
+1000,asp.net,60,3
