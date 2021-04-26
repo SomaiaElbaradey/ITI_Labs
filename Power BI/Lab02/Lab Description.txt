@@ -1,0 +1,66 @@
+@@ AdventureWorks
+- Data Source: 
+https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=ssms
+
+Tables:
+Sales.SalesOrderHeader
+Sales.SalesOrderDetail
+Sales.vSalesPerson (view)
+Sales.SalesTerritory
+Purchasing.ShipMethod
+Production.Product
+Production.ProductSubcategory
+Production.ProductCategory
+
+Status (Add based on ufnGetSalesOrderStatusText function)
+Dates (DAX)
+
+-Rename Tables, columns
+-Remove unused columns 
+
+-one table (Merge M Language)
+Production.Product
+Production.ProductSubcategory
+Production.ProductCategory
+
+Contains: PorductID, Product, SubCategory, Category
+
+Modelig:
+
+-Product Hierarchy
+
+
+-line chart vs. counts (USERELATIONSHIP)
+orderdate
+shipdate
+duedate
+
+- # Orders Measure 
+- # Orders Deatils Measure 
+- # Customer Measure 
+- Total Amount Measure   
+- # Qty
+
+
+Visuals: (Use Measures)
+
+-Drill Down
+-Drill Through 
+-Tooltip page
+
+- # Orders Card 
+- # Orders Deatils Card  
+- # Customer Card 
+- Total Amount Card 
+- # Qty Card 
+
+# Orders by OrderDate vs. ShipDate vs. DueDate
+# Orders by Status
+# Orders by Shipmethod
+# Orders by Category, subCategory, Product
+# Orders by FlagOnlineOffline
+# Orders vs. Total Amount by Territory
+Top 10 Sales Perosns (# Orders or Total Amount) (Filter filter pane)
+
+
+-- Good Colors, Layout and Chart Titles (Meaningful)
