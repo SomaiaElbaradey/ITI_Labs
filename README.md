@@ -11,10 +11,10 @@ The showcase of some of ITI projects samples that is categorized into distinct r
       
 <row>
     <col>
-      <img width="470" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/9a0c2f92-8bf9-4a45-b268-e9b09eb42cd0">
+      <img width="300" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/9a0c2f92-8bf9-4a45-b268-e9b09eb42cd0">
     </col>
     <col>
-      <img width="520" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/0df6fee7-c04b-4fcb-b6c6-1f83ef023236">
+      <img width="320" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/0df6fee7-c04b-4fcb-b6c6-1f83ef023236">
   </col>
 </row>
 
