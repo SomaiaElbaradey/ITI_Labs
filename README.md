@@ -11,10 +11,10 @@ The showcase of some of ITI projects samples that is categorized into distinct r
       
 <row>
     <col>
-      <img width="300" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/9a0c2f92-8bf9-4a45-b268-e9b09eb42cd0">
+      <img width="400" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/9a0c2f92-8bf9-4a45-b268-e9b09eb42cd0">
     </col>
     <col>
-      <img width="320" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/0df6fee7-c04b-4fcb-b6c6-1f83ef023236">
+      <img width="420" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/0df6fee7-c04b-4fcb-b6c6-1f83ef023236">
   </col>
 </row>
 
@@ -24,10 +24,10 @@ The showcase of some of ITI projects samples that is categorized into distinct r
      
   <row>
     <col>
-         <img width="489" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/2c692185-23d8-4d70-9190-82f2d55eb576">
+         <img width="389" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/2c692185-23d8-4d70-9190-82f2d55eb576">
      </col>
       <col>
-          <img width="509" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/3594fa46-002c-4ed3-a4b1-677902d56de3">
+          <img width="409" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/3594fa46-002c-4ed3-a4b1-677902d56de3">
       </col>
   </row>
 
@@ -37,10 +37,10 @@ The showcase of some of ITI projects samples that is categorized into distinct r
      
   <row>
     <col>
-      <img width="500" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/273f88b2-e4c6-4a0d-8e15-c867e0699620">
+      <img width="400" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/273f88b2-e4c6-4a0d-8e15-c867e0699620">
      </col>
       <col>
-         <img width="500" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/061f8667-9851-4110-b273-03b6b00d4284">
+         <img width="400" alt="image" src="https://github.com/SomaiaElbaradey/ITI_Labs/assets/22660940/061f8667-9851-4110-b273-03b6b00d4284">
      </col>
    </row>
 
